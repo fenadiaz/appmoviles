@@ -4,8 +4,10 @@ var FarmaciaViewModel = function(){
 
   var self = this;
 
-  self.name = ko.observable();
-  self.price = ko.observable();
+  self.nombre = ko.observable('hola');
+  self.direccion = ko.observable();
+  self.numero = ko.observable();
+  self.comuna = ko.observable();
   self.productList = ko.observableArray();
 
   //Behaviour
@@ -41,8 +43,8 @@ var FarmaciaViewModel = function(){
   };
 
   self.getAll = function(){
-    var url = 'http://farmaciAPP-ahpollito.rhcloud.com/api/farmacias/';
-
+    //var url = 'http://farmaciAPP-ahpollito.rhcloud.com/api/farmacias/';
+    var url = 'localhost:8000/api/farmacias'
     $.ajax({
 
         url: 	url,
