@@ -1,11 +1,10 @@
 'use strict';
 
-var ProductViewModel = function(){
+var FarmaciaViewModel = function(){
 
   var self = this;
 
-  //Domain data
-  self.name = ko.observable('Manzana');
+  self.name = ko.observable();
   self.price = ko.observable();
   self.productList = ko.observableArray();
 
@@ -42,7 +41,7 @@ var ProductViewModel = function(){
   };
 
   self.getAll = function(){
-    var url = 'http://unabrestmobile-mreyesexamples.rhcloud.com/api/products/';
+    var url = 'http://farmaciAPP-ahpollito.rhcloud.com/api/farmacias/';
 
     $.ajax({
 
