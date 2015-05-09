@@ -12,7 +12,10 @@
     "express": "^4.3.0",
     "kraken-devtools": "^1.0.0",
     "kraken-js": "^1.0.1",
-    "localizr": "^0.1.0"
+    "localizr": "^0.1.0",
+    "mongoose": "^4.0.2",
+    "winston": "^1.0.0",
+    "winston-mongodb": "^1.1.1"
   },
   "devDependencies": {
     "grunt": "^0.4.1",
