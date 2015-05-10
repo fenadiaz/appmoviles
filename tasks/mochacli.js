@@ -7,12 +7,6 @@ module.exports = function mochacli(grunt) {
 
     // Options
     return {
-        src: ['test']
-        /*options: {
-            timeout: 6000,
-            'check-leaks': true,
-            ui: 'bdd',
-            reporter: 'spec'
-        }*/
+        src: ['test/index.js']
     };
 };
