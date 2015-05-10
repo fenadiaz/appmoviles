@@ -19,7 +19,7 @@ install:
   - npm install
 
 after_success:
-  - scripts/deploy.sh
+  - ./scripts/deploy.sh
 
 notifications:
     email:
