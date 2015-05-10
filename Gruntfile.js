@@ -10,6 +10,5 @@ module.exports = function (grunt) {
 
     // Register group tasks
     grunt.registerTask('build', [ 'jshint', 'i18n', 'copyto' ]);
-    grunt.registerTask('test', [ 'jshint', 'mochacli' ]);
 
 };
