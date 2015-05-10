@@ -1,3 +1,4 @@
+
 {
     // Whether the scan should stop on first error.
     "passfail": false,
