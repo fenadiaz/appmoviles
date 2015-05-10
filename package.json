@@ -4,6 +4,9 @@
   "description": "ah pollito",
   "author": "DarkKnight",
   "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
   "dependencies": {
     "engine-munger": "^0.2.0",
     "express": "^4.3.0",
