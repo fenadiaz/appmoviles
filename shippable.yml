@@ -21,9 +21,6 @@ install:
 before_script:
   - grunt build
 
-script:
-  - npm test
-
 after_success:
   - /scripts/deploy.sh
 
