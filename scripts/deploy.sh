@@ -5,8 +5,7 @@ if [ "$BRANCH" != "master" ]
 
 else
 
-   echo "deploying master branch"
-   git push -f openshift $BRANCH:master
+   echo "deploying master branch"}
    echo "deployed successfully"
 
 fi
