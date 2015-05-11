@@ -18,9 +18,6 @@ before_install:
 install:
   - npm install
 
-after_success:
-  - scripts/deploy.sh
-
 notifications:
     email:
         - andywarrior0707@gmail.com
