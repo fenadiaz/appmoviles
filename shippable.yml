@@ -10,7 +10,7 @@ node_js:
 
 env:
   global:
-    - OPENSHIFT_REPO=ssh://554d27694382ecfbf3000030@farmaciapp-ahpollito.rhcloud.com/~/git/farmaciapp.git/
+    - OPENSHIFT_REPO=ssh://554ffb685973ca89aa0000bf@farmaciapp-ahpollito.rhcloud.com/~/git/farmaciapp.git/
 
 before_install:
   - git remote -v | grep ^openshift || git remote add -m master openshift $OPENSHIFT_REPO
