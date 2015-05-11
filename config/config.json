@@ -1,5 +1,9 @@
 {
-
+    "databaseConfig": {
+        "mongoDbUrl" : "env:OPENSHIFT_MONGODB_DB_URL",
+        "dbName": "env:OPENSHIFT_APP_NAME"
+    },
+    
     "winstonConfig": {
         "collection" : "logs",
         "level" : "info",

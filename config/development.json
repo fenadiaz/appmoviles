@@ -1,4 +1,8 @@
 {
+    "databaseConfig": {
+    "mongoDbUrl" : "mongodb://localhost:27017/",
+    "dbName": "farmacias"
+    },
     "winstonConfig": {
             "collection" : "logs",
             "level" : "debug",
