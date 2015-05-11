@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 
 var farmaciaSchema = new mongoose.Schema({
+	id: {type: Number, required:true},
 	nombre: {type: String, required:true},
   	direccion:  {type: String, required:true},
   	numero: {type: String, required:true},
