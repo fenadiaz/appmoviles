@@ -11,7 +11,11 @@ var options, app;
 options = {
     onconfig: function (config, next) {
 
-        mongoose.connect('mongodb://localhost:27017/farmacias');
+        var dbData = config.get('databaseConfig');
+
+        var dbConnectionString = dbData.mongoDbUrl + dbData.dbName;
+
+        mongoose.connect(dbConnectionString);
         
         var database = mongoose.connection;
 
