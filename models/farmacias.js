@@ -7,6 +7,8 @@ var farmaciaSchema = new mongoose.Schema({
   	direccion:  {type: String, required:true},
   	numero: {type: String, required:true},
   	comuna: {type: String, required:true},
+  	latitud: {type: Number, required:true},
+  	longitud: {type: Number, required:true},
   	productos: [],
 });
 
