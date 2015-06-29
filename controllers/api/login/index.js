@@ -21,7 +21,7 @@ module.exports = function(router){
         }
         if(error){
           return res.status(500).json(error).end();
-        }
+        }//sdf
         var secret = 'mipassword';
         userlib.getToken(user, secret, function(error,token){
           return res.status(201).json({token:token}).end();
