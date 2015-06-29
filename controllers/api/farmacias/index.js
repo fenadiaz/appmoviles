@@ -1,9 +1,11 @@
 'use strict';
 
 var farmaciasLib = require('../../../lib/farmaciasLib');
+var secureApiLib = require('../../../lib/secureApiLib');
 
 module.exports = function (router) {
 
+  router.use('/', secureApiLib.jwtMiddleware);
   router.get('/', function (req, res) {
 
     farmaciasLib.getAll(function(error, results){
@@ -24,7 +26,7 @@ module.exports = function (router) {
 
     var id = req.params.id;
 
-    farmaciasLib.getById(id, function(error, product){
+    farmaciasLib.getById(id, function(error, farmacy){
 
       if (error){
         if (error.message === 'NOT_FOUND'){
@@ -33,7 +35,7 @@ module.exports = function (router) {
         return res.status(500).json(error).end();
       }
 
-      res.status(200).json(product).end();
+      res.status(200).json(farmacy).end();
 
     });
   });
@@ -58,7 +60,7 @@ module.exports = function (router) {
     var id = req.params.id;
     var newData = req.body;
 
-    farmaciasLib.update(id, newData, function(error, product){
+    farmaciasLib.update(id, newData, function(error, farmacy){
 
       if (error){
         if (error.message === 'NOT_FOUND'){
@@ -67,7 +69,7 @@ module.exports = function (router) {
         return res.status(500).json(error).end();
       }
 
-      res.status(200).json(product).end();
+      res.status(200).json(farmacy).end();
 
     });
   });
@@ -76,7 +78,7 @@ module.exports = function (router) {
 
     var id = req.params.id;
 
-    farmaciasLib.delete(id, function(error, product){
+    farmaciasLib.delete(id, function(error, farmacy){
 
       if (error){
         if (error.message === 'NOT_FOUND'){
