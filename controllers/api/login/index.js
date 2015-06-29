@@ -18,7 +18,7 @@ module.exports = function (router) {
                 return res.status(401).end();
             }
             
-            //Get the JWToken
+            //Get the JWToken asd
             usersLib.getToken(req.query.userid, function(error, token){
                 return res.status(200).json({'token': token}).end();  
             });             
