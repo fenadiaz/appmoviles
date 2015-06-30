@@ -16,7 +16,7 @@ module.exports = function(router){
       var password = data.password;
 
       userlib.findOne(username,password,function(error,user){
-        if(error&&error.message === 'NOT_FOUND'){
+        if(error && error.message === 'NOT_FOUND'){
           return res.status(401).json({message:'USER_OR_PASSWORD_NOT_FOUND'});
         }
         if(error){
@@ -24,7 +24,7 @@ module.exports = function(router){
         }//sdf
         var secret = 'mipassword';
         userlib.getToken(user, secret, function(error,token){
-          return res.status(201).json({token:token}).end();
+          return res.status(201).json({'token':token}).end();
         });
       });
     });
