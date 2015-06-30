@@ -1,11 +1,11 @@
 'use strict';
 
 var farmaciasLib = require('../../../lib/farmaciasLib');
-//var secureApiLib = require('../../../lib/secureApiLib');
+var secureApiLib = require('../../../lib/secureApiLib');
 
 module.exports = function (router) {
 
-//  router.use('/', secureApiLib.jwtMiddleware);
+  router.use('/', secureApiLib.jwtMiddleware);
   router.get('/', function (req, res) {
 
     farmaciasLib.getAll(function(error, results){
