@@ -43,6 +43,7 @@ module.exports = function (router) {
   router.post('/', function (req, res) {
 
     var newFarmacia = req.body;
+    console.log(req.body.token);
     res.setHeader('x-access-token',newFarmacia.token);
     farmaciasLib.create(newFarmacia, function(error){
 
