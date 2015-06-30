@@ -1,7 +1,7 @@
 'use strict';
 
 var farmaciasLib = require('../../../lib/farmaciasLib');
-var secureApiLib = require('../../../lib/secureApiLib');
+//var secureApiLib = require('../../../lib/secureApiLib');
 
 module.exports = function (router) {
 
