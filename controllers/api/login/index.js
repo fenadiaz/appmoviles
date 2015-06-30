@@ -1,6 +1,6 @@
 'use strict';
 
-var userlib = require('../../../lib/userlib');
+var userlib = require('../../../lib/userLib');
 
 module.exports = function(router){
 
