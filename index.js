@@ -5,6 +5,7 @@ var express = require('express');
 var kraken = require('kraken-js');
 var mongoose = require('mongoose');
 var logger = require('./lib/logger');
+var secureApiLib = require('./lib/secureApiLib');
 
 var options, app;
 
