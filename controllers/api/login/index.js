@@ -13,6 +13,9 @@ module.exports = function(router){
         }
         var token = req.body;
         res.setHeader('x-access-token',token.token);
+        usersLib.getToken(req.query.userid, function(error, token){
+                return res.status(200).json({'token': token}).end();  
+        }); 
     });
     router.post('/', function (req, res) {
 
