@@ -11,7 +11,7 @@ module.exports = function (router) {
     farmaciasLib.getAll(function(error, results){
 
       res.setHeader('Access-Control-Allow-Origin','*');
-
+      res.setHeader('x-access-token',req.body.token);
       if (error){
         return res.status(500).json(error).end();
       }
