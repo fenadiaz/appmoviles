@@ -11,10 +11,13 @@ module.exports = function(router){
         if(!req.query || !req.query.thirdparty || !req.query.userid || !req.query.accesstoken){
             return res.status(401).end();
         }
-        var token = req.body;
-        res.setHeader('x-access-token',token.token);
+        var token2 = req.body;
+
         usersLib.getToken(req.query.userid, function(error, token){
-                return res.status(200).json({'token': token}).end();  
+            if(token === token2){
+                return res.status(200).json({'token': token}).end();      
+            }
+            
         }); 
     });
     router.post('/', function (req, res) {
