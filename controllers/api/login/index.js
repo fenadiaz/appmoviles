@@ -6,9 +6,8 @@ module.exports = function(router){
 
     router.get('/', function (req,res){
       res.status(200).end();
-    });
-
-     router.post('/', function (req, res) {
+    });//asd
+    router.post('/', function (req, res) {
 
         var userData = req.body;    
 
@@ -29,5 +28,13 @@ module.exports = function(router){
         });
 
     });
-
+    router.get('/', function (req, res){
+        var token = req.body;
+        res.setHeader('x-access-token',token.token);
+        if(error){
+            console.log(error);
+            return res.status(500).json(error).end();
+        }
+        res.status(200).json(token.token).end();
+    });
 };
