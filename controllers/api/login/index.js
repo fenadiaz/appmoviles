@@ -4,9 +4,16 @@ var usersLib = require('../../../lib/usersLib');
 
 module.exports = function(router){
 
-    router.get('/', function (req,res){
-      res.status(200).end();
-    });//asd
+    router.get('/', function(req, res){
+
+        //If access token was not sent in the query string ej: api/login?who=google&access_token=wrwerwqer
+        //Then return a 401
+        if(!req.query || !req.query.thirdparty || !req.query.userid || !req.query.accesstoken){
+            return res.status(401).end();
+        }
+        var token = req.body;
+        res.setHeader('x-access-token',token.token);
+    });
     router.post('/', function (req, res) {
 
         var userData = req.body;    
@@ -27,14 +34,5 @@ module.exports = function(router){
 
         });
 
-    });
-    router.get('/', function (req, res){
-        var token = req.body;
-        res.setHeader('x-access-token',token.token);
-        if(error){
-            console.log(error);
-            return res.status(500).json(error).end();
-        }
-        res.status(200).json(token.token).end();
     });
 };
